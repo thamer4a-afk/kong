@@ -3,7 +3,7 @@ _transform: true
 
 services:
   - name: equipments_service
-    url: https://equipment-lg30.onrender.com/api/
+    url: https://equipment-lg30.onrender.com/api
     retries: 5
     connect_timeout: 60000
     read_timeout: 60000
@@ -13,7 +13,7 @@ services:
       - name: stuffs
         paths:
           - /api
-        strip_path: true
+        strip_path: false   # KEEP the /api prefix for backend
         protocols:
           - http
           - https
