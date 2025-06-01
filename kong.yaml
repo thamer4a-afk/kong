@@ -12,7 +12,7 @@ services:
     routes:
       - name: stuffs
         paths:
-          - /api
+          - /api/
         strip_path: false   # KEEP the /api prefix for backend
         protocols:
           - http
