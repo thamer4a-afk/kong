@@ -1,24 +1,23 @@
-_format_version: "3.0"
-_transform: true
-
-services:
-  - name: equipments_service
-    url: https://equipment-lg30.onrender.com/api/
-    retries: 5
-    connect_timeout: 60000
-    read_timeout: 60000
-    write_timeout: 60000
-    enabled: true
-    routes:
-      - name: stuffs
-        paths:
-          - /api
-        strip_path: false   # KEEP the /api prefix for backend
-        protocols:
-          - http
-          - https
-        request_buffering: true
-        response_buffering: true
-        https_redirect_status_code: 426
-        preserve_host: false
-        path_handling: v0
+{
+  "service": {
+    "name": "equipments_service",
+    "host": "equipment-lg30.onrender.com",
+    "protocol": "https",
+    "port": 443,
+    "path": "/api/",
+    "retries": 5,
+    "connect_timeout": 60000,
+    "read_timeout": 60000,
+    "write_timeout": 60000,
+    "enabled": true
+  },
+  "route": {
+    "name": "stuffs",
+    "paths": ["/api"],
+    "strip_path": false,
+    "protocols": ["http","https"],
+    "request_buffering": true,
+    "response_buffering": true,
+    "https_redirect_status_code": 426
+  }
+}
