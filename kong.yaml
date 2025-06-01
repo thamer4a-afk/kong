@@ -1,0 +1,14 @@
+_format_version: "3.0"
+_transform: true
+
+services:
+  - name: equipment-service
+    url: https://equipment-lg30.onrender.com
+    routes:
+      - name: equipment-api-route
+        paths:
+          - /api
+        strip_path: true
+        protocols:
+          - http
+          - https
